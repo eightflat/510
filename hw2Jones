@@ -1,0 +1,43 @@
+import os
+import time
+from hashlib import sha256
+
+jpgHead=b'\xff\xd8\xff\xe0'
+
+def sha256HashFunc(filename):
+    '''Takes in content to be hashed and returns the SHA256 hash value'''
+    hash=hashlib.sha256("filename.exe",'rb').read()
+    return hash.hexdigest()
+
+def main()
+    '''Traverses a given directory and its subfolders, looking for JPEG files based on the header'''
+    dictionary={}
+    os.getcwd()
+    
+    for root, dirs, files in os.walk("."):
+        for filename in files:
+            filename=os.path.join(root,filename)
+
+    try:
+        openFile=open('filename', 'rb')
+    except:
+        print("Exception: A file doesn't exist")
+        quit()
+        
+    checkJPG=open(r'C:\Users\eight\Desktop\Files\cfrs510HW4files\filename','rb')
+    checkJPG=checkJPG.read(4)
+    if checkJPG==jpgHead
+        sha256HashFunc(filename)
+        dictionary={'Hash: ':1,'Path: ':1,'File: ':1}
+
+    for index in dictionary:
+        dictionary[index]=outputFile(index)
+        fileOut.write(fileName+"\n\tHash:"+dictionary[fileName]+"\n")
+        inFile.close()
+
+    #print statement "Script is complete", location of file, time completed
+    print("Script is complete")
+
+if__name__=='__main__'
+    main()
+    
